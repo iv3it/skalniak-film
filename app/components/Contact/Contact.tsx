@@ -11,7 +11,7 @@ const Contact = () => {
         </div>
         <div className="flex flex-col justify-end mt-12 lg:mt-0">
           <div>
-            <div className="flex flex-col text-[1.4rem] uppercase mb-8">
+            <div className="flex flex-col text-[1.4rem] uppercase font-medium mb-8">
               <a href='https://maps.app.goo.gl/3MAAH5wWvpUVzrMUA' target='_blank' rel='noreferrer'>Potok 125, 28-225 Potok</a>
               <a href='mailto:kskalniak1992@gmail.com'>kskalniak1992@gmail.com</a>
               <a href='tel:+48514743677'>+48 514-743-677</a>
