@@ -1,0 +1,28 @@
+.contactLink {
+  @apply shrink-0;
+
+  font-size: 0.75rem;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+
+  &:hover {
+    // color: var(--grey);
+    opacity: 0.6;
+  }
+}
+
+.contactLinkA {
+  @apply flex flex-row items-center;
+  font-weight: 500;
+}
+
+.arrow {
+  object-fit: contain;
+  height: 1rem;
+  width: auto;
+  margin-right: 0.5rem;
+}
