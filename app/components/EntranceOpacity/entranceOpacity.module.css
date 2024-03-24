@@ -1,0 +1,10 @@
+.entranceOpacity {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dark);
+  overflow: hidden;
+  z-index: 99999;
+  will-change: opacity;
+}

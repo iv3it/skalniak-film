@@ -5,6 +5,9 @@
 :root {
   --black: #000000;
   --white: #ffffff;
+  --milk: #f7f5f0;
+  --dark: #20282e;
+  --grey: #8c8e8e;
 }
 
 * {
@@ -20,6 +23,6 @@ html {
 }
 
 body {
-  color: var(--white);
-  background-color: var(--black);
+  color: var(--dark);
+  background-color: var(--milk);
 }

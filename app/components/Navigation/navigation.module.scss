@@ -1,0 +1,88 @@
+.logo {
+  @apply text-sm relative;
+  color: var(--dark);
+  font-weight: 700;
+  top: 0.25rem;
+  user-select: none;
+}
+
+.navList {
+  @apply text-xs font-medium flex;
+  color: var(--dark);
+  flex-basis: 0;
+
+  &:nth-of-type(2) {
+    justify-content: flex-end;
+  }
+}
+
+.navListItem {
+  @apply shrink-0;
+  color: var(--dark);
+  font-size: 0.75rem;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 0.65rem;
+  }
+
+  &:hover {
+    color: var(--grey);
+  }
+}
+
+.navListItemA {
+  @apply py-2 px-4 block;
+}
+
+.navigationMobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--milk);
+  overflow-y: auto;
+}
+
+.navListMobile {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: var(--dark);
+}
+
+.navListItemMobile {
+  font-size: 2.75rem;
+  font-weight: 500;
+  background: linear-gradient(to right, var(--dark),var(--grey), var(--dark));
+  background-size: 200% 200%;
+  animation: rainbow 2s ease-in-out infinite;
+  background-clip: text;
+  color: var(--dark);
+  transition: color .2s ease-in-out;
+
+  &:hover {
+    color:rgba(0,0,0,0);
+  }
+}
+
+@keyframes rainbow { 
+  0% { background-position: left }
+  50% { background-position: right }
+  100% { background-position: left }
+}
+
+.navButton {
+  @apply shrink-0 py-2 px-4 block;
+  color: var(--dark);
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--grey);
+  }
+}
