@@ -5,6 +5,7 @@ import { Satoshi } from './fonts';
 import EntranceOpacity from './components/EntranceOpacity/EntranceOpacity';
 import Navigation from './components/Navigation/Navigation';
 import Hero from "./components/Hero/Hero";
+import Footer from './components/Footer/Footer';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <main className={`${Satoshi.className}`}>
         <Navigation />
         <Hero />
+        <Footer />
       </main>
     </ReactLenis>
   );
