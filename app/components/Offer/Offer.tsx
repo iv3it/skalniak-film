@@ -49,7 +49,7 @@ export default function Offer() {
 
   return (
     
-    <section ref={offer} style={{ opacity: 0 }} className="py-20 bg-[#d2d2d2]">
+    <section ref={offer} style={{ opacity: 0 }} className="py-20 bg-[#e4e5ea]">
       <div className='container mx-auto my-10 px-4'>
         <h2 className="text-[2.6rem] md:text-[3.2rem] lg:max-w-[80%] xl:max-w-[70%]">Oferta pakietów ślubnych, pakiety można mieszać dowolnie.</h2>
       </div>
