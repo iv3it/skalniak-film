@@ -9,7 +9,7 @@
 .box {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--dark);
+  background-color: var(--milk);
   border-radius: 6px;
   padding: 1rem;
 }
@@ -20,12 +20,10 @@
 
 .packetText {
   color: var(--dark);
-  text-align: center;
 }
 
 .packetName {
   color: var(--dark);
-  text-align: center;
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 2rem;
@@ -68,7 +66,7 @@
 .priceBox {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   margin-top: auto;
 }
 
