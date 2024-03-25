@@ -50,7 +50,7 @@ export default function Offer() {
   return (
     <section ref={offer} style={{ opacity: 0 }} className="mt-[7rem]">
       <div className='container mx-auto my-10 px-4'>
-        <h2 className="text-[2.6rem] md:text-[3.2rem]">Oferta pakietów ślubnych, pakiety można mieszać dowolnie.</h2>
+        <h2 className="text-[2.6rem] md:text-[3.2rem] lg:max-w-[80%] xl:max-w-[70%]">Oferta pakietów ślubnych, pakiety można mieszać dowolnie.</h2>
       </div>
       <div className='container mx-auto my-10 px-4'>
         <h2 className="text-[2.1rem] md:text-[2.3rem] mt-[6rem] mb-[2rem]" id="gsap-FotoContainer">Fotografia</h2>
