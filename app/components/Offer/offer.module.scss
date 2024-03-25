@@ -1,0 +1,87 @@
+.boxes {
+  gap: 1rem;
+
+  &:nth-child(odd) {
+    margin: 1.5rem 0;
+  }
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--dark);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.packet {
+
+}
+
+.packetText {
+  color: var(--dark);
+  text-align: center;
+}
+
+.packetName {
+  color: var(--dark);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.icon {
+  width: 6rem;
+  height: 6rem;
+  object-fit: contain;
+  margin: 2rem auto;
+}
+
+.boxList {
+  color: var(--dark);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.boxListLi {
+  display: flex;
+  margin-bottom: 0.5rem;
+
+  &::before {
+    content: "";
+    position: relative;
+    background-image: url("../../../public/tick-circle.svg");
+
+    display: flex;
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 1rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    align-self: center;
+  }
+}
+
+.priceBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+}
+
+.priceText {
+  color: var(--dark);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.price {
+  color: var(--dark);
+  font-size: 2.1rem;
+  line-height: 2.6rem;
+  font-weight: 700;
+  text-align: center;
+}
