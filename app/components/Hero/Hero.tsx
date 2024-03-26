@@ -3,7 +3,7 @@ import styles from './hero.module.css';
 
 const Hero = () => {
   return ( 
-    <section className='pt-16'>
+    <section className='py-16'>
       <div className="container mx-auto px-4">
         <Image
           src="/hero.jpg"
