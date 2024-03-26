@@ -15,7 +15,7 @@ const Hero = () => {
         />
         <div className="flex flex-col justify-between md:items-center md:flex-row-reverse">
           <h1 className="text-[3.2rem] lg:text-[4rem] font-medium text-left md:text-right">Fotografia & film</h1>
-          <h2 className="text-[0.95rem] my-4 md:my-0 pr-8 md:max-w-[17.5rem]">Hej, mam na imię Kazimierz. Zajmuję się filmowaniem oraz fotografią. Współpracuję sam lub w duecie z Kamilem, który jest fotografem.</h2>
+          <h2 className="text-[0.95rem] mt-8 md:my-0 pr-8 md:max-w-[17.5rem]">Hej, mam na imię Kazimierz. Zajmuję się filmowaniem oraz fotografią. Współpracuję sam lub w duecie z Kamilem, który jest fotografem.</h2>
         </div>
       </div>
     </section>
