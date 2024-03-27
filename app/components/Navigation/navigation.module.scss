@@ -1,9 +1,7 @@
 .logo {
-  @apply text-sm relative;
-  color: var(--white);
-  font-weight: 700;
-  top: 0.25rem;
-  user-select: none;
+  display: block;
+  object-fit: contain;
+  width: 88px;
 }
 
 .navList {

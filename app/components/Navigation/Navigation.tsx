@@ -2,6 +2,7 @@
 
 import styles from './navigation.module.scss';
 import { useState } from 'react';
+import Image from "next/image";
 import Link from 'next/link';
 
 const Navigation = () => {
@@ -15,7 +16,15 @@ const Navigation = () => {
     <div className="fixed top-0 z-20 w-full">
       <div className="container mx-auto px-4">
         <nav className='hidden lg:flex justify-between items-center py-3 gsap-navigation'>
-          <h2 className={`${styles.logo}`}><Link href="/">Kazimierz<br/>Skalniak</Link></h2>
+          <Link href="/" className={`${styles.logo}`}>
+            <Image
+              src="/skalniak-logo.png"
+              alt="background image"
+              width={144}
+              height={32}
+              priority
+            />
+          </Link>
           <ul className={styles.navList}>
             <li className={styles.navListItem}><Link href="/#portfolio" className={styles.navListItemA}>PORTFOLIO</Link></li>
             <li className={styles.navListItem}><Link href="/#about" className={styles.navListItemA}>O MNIE</Link></li>
@@ -25,14 +34,32 @@ const Navigation = () => {
         </nav>
 
         <nav className='flex justify-between items-center py-3 lg:hidden'>
-          <h2 className={`${styles.logo}`}><Link href="/">Kazimierz<br/>Skalniak</Link></h2>
+          <Link href="/">
+            <Image
+              src="/skalniak-logo.png"
+              alt="background image"
+              className={`${styles.logo}`}
+              width={288}
+              height={63}
+              priority
+            />
+          </Link>
           <button className={styles.navButton} onClick={() => toggleMenu()}>MENU</button>
         </nav>
 
         {openMenu && 
           <nav className={`${styles.navigationMobile} py-3 px-4 navigation-mobile`}>
             <div className='flex justify-between'>
-              <h2 className={`${styles.logo}`}><Link href="/" onClick={() => setOpenMenu(false)}>Kazimierz<br/>Skalniak</Link></h2>
+              <Link href="/" onClick={() => setOpenMenu(false)}>
+                <Image
+                  src="/skalniak-logo.png"
+                  alt="background image"
+                  className={`${styles.logo} py-2`}
+                  width={288}
+                  height={63}
+                  priority
+                />
+              </Link>
               <button className={styles.navButton} onClick={() => toggleMenu()}>ZAMKNIJ</button>
             </div>
 
