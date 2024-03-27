@@ -1,7 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="container mx-auto px-4">
-      <div className="text-xs my-6">&copy; 2024</div>
+    <footer className="bg-[var(--dark)]">
+      <div className="container mx-auto px-4">
+        <div className="text-[var(--white)] text-xs py-6">&copy; 2024</div>
+      </div>
     </footer>
   );
 }

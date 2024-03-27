@@ -49,12 +49,12 @@ export default function Offer() {
 
   return (
     
-    <section ref={offer} style={{ opacity: 0 }} className="py-20 bg-[var(--milk)]">
+    <section ref={offer} style={{ opacity: 0 }} className="py-20 bg-[var(--dark)]">
       <div className='container mx-auto my-10 px-4'>
-        <h2 className="font-medium text-[2.6rem] md:text-[3.2rem] lg:max-w-[80%] xl:max-w-[70%]">Oferta pakietów ślubnych, pakiety można mieszać dowolnie.</h2>
+        <h2 className="text-[var(--white)] font-medium text-[2.6rem] md:text-[3.2rem] lg:max-w-[80%] xl:max-w-[70%]">Oferta pakietów ślubnych, pakiety można mieszać dowolnie.</h2>
       </div>
       <div className='container mx-auto my-10 px-4'>
-        <h2 className="text-[2.1rem] md:text-[2.3rem] mt-[6rem] mb-[2rem] font-medium" id="gsap-FotoContainer">Fotografia</h2>
+        <h2 className="text-[var(--white)] text-[2.1rem] md:text-[2.3rem] mt-[6rem] mb-[2rem] font-medium" id="gsap-FotoContainer">Fotografia</h2>
 
         <div className={`${styles.boxes} grid grid-cols-1 lg:grid-cols-3 gap-4`}>
           <div className={`${styles.box} gsap-boxFoto`}>
@@ -122,7 +122,7 @@ export default function Offer() {
           </div>
         </div>
 
-        <h2 className="text-[2.1rem] md:text-[2.3rem] mt-[6rem] mb-[2rem] font-medium" id="gsap-FilmContainer">Film</h2>
+        <h2 className="text-[var(--white)] text-[2.1rem] md:text-[2.3rem] mt-[6rem] mb-[2rem] font-medium" id="gsap-FilmContainer">Film</h2>
 
         <div className={`${styles.boxes} grid grid-cols-1 lg:grid-cols-3 gap-4`}>
           <div className={`${styles.box} gsap-boxFilm`}>
