@@ -13,11 +13,14 @@ const Hero = () => {
   const tl = useRef<GSAPTimeline | null>(null);
 
   useGSAP(() => {
-    tl.current = gsap.timeline().to('.gsap-box',
-    {
+    tl.current = gsap.timeline().to('.gsap-box', {
       width: 0,
       duration: 0.7,
       stagger: 0.1,
+    }).to('.gsap-title', {
+      translateY: 0,
+      duration: 1.2,
+      stagger: 0.5,
     })
   }, {
     scope: hero,
@@ -45,8 +48,14 @@ const Hero = () => {
       </div>
       <div className="container mx-auto px-4">
         <div className="flex flex-col justify-between md:items-center md:flex-row-reverse">
-          <h1 className="text-[var(--white)] text-[3.2rem] lg:text-[4rem] font-medium text-left md:text-right">Fotografia & film</h1>
-          <h2 className="text-[var(--white)] text-[0.95rem] mt-8 md:my-0 pr-8 md:max-w-[19.5rem]">Hej, mam na imię Kazimierz. Zajmuję się filmowaniem oraz fotografią ślubną i eventową. Współpracuję sam lub w duecie z Kamilem, który jest fotografem.</h2>
+          <h1 className="overflow-hidden text-[var(--white)] text-[3.2rem] lg:text-[4rem] font-medium text-left md:text-right">
+            <span className={`${styles.title} gsap-title`}>Fotografia & film</span>
+          </h1>
+          <h2 className="overflow-hidden text-[var(--white)] text-[0.95rem] mt-8 md:my-0 pr-8 md:max-w-[19.5rem]">
+            <span className={`${styles.title} gsap-title`}>
+              Hej, mam na imię Kazimierz. Zajmuję się filmowaniem oraz fotografią ślubną i eventową. Współpracuję sam lub w duecie z Kamilem, który jest fotografem.
+            </span>
+          </h2>
         </div>
       </div>
     </section>
