@@ -17,7 +17,11 @@ const Hero = () => {
       width: 0,
       duration: 0.7,
       stagger: 0.1,
-    }).to('.gsap-title', {
+    })
+    .to('.gsap-image',{
+      scale: 1,
+    }, '<')
+    .to('.gsap-title', {
       translateY: 0,
       duration: 1.2,
       stagger: 0.5,
@@ -40,9 +44,9 @@ const Hero = () => {
         <Image
           src="/hero.jpg"
           alt="background image"
-          className={styles.image}
-          width={1600}
-          height={900}
+          className={`${styles.image} gsap-image`}
+          width={1920}
+          height={1500}
           priority
         />
       </div>

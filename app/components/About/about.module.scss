@@ -10,14 +10,14 @@
 .contactLink {
   @apply py-4 px-8 mt-16 shrink-0 inline-block;
 
-  border: 1px solid var(--dark);
-  color: var(--dark);
+  border: 1px solid var(--white);
+  color: var(--white);
   font-size: 0.75rem;
   transition: 0.2s ease-in-out;
   cursor: pointer;
 
   &:hover {
-    background-color: var(--dark);
-    color: var(--milk);
+    background-color: var(--white);
+    color: var(--dark);
   }
 }

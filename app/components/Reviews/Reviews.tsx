@@ -25,7 +25,7 @@ export default function Reviews() {
   };
 
   return (
-    <section className='py-10 bg-[var(--white)]'>
+    <section className='py-10 bg-[var(--dark)]'>
       <div className='container mx-auto px-4'>
         <h2 className={`${styles.sectionTitle}`}>Opinie klientów</h2>
 
