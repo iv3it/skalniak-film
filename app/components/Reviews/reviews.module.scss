@@ -9,7 +9,7 @@
 .box {
   position: relative;
   flex-direction: column;
-  background-color: var(--white);
+  background-color: var(--darkGrey);
   border-radius: 6px;
   padding: 1rem;
   display: flex;
@@ -17,7 +17,7 @@
 }
 
 .review {
-  color: var(--dark);
+  color: var(--white);
   margin-bottom: 2rem;
   font-style: italic;
 
@@ -30,6 +30,6 @@
 
 .name {
   font-size: 0.85rem;
-  color: var(--dark);
+  color: var(--white);
   align-self: flex-end;
 }
