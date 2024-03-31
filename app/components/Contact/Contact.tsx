@@ -8,7 +8,7 @@ const Contact = () => {
         <div className='flex flex-col lg:flex-row justify-between'>
           <div className='flex flex-col justify-between'>
             <p className="text-[var(--white)] text-[2rem] font-medium max-w-[90%] lg:max-w-[33rem]">Zapraszam do napisania sms-a lub e-maila z datą i lokalizacją ślubu.</p>
-            <p className="text-[var(--white)] text-[0.95rem] mt-[3rem] lg:mt-[7rem] max-w-[70%] md:max-w-[40%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, dignissimos tenetur sequi ipsa at assumenda!</p>
+            <p className="text-[var(--white)] text-[0.95rem] mt-[3rem] lg:mt-[7rem] max-w-[70%] md:max-w-[42%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, dignissimos tenetur sequi ipsa at assumenda!</p>
           </div>
           <div className="flex flex-col justify-end mt-12 lg:mt-0">
             <div>
