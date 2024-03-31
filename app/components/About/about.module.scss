@@ -1,14 +1,5 @@
-.image {
-  @apply max-h-[350px] md:max-h-none max-w-[350px] mb-20 md:mb-0;
-  position: relative;
-  border-radius: 10px;
-  display: block;
-  z-index: 1;
-  object-fit: contain;
-}
-
 .contactLink {
-  @apply py-4 px-8 mt-16 shrink-0 inline-block;
+  @apply py-3 px-6 mt-12 shrink-0 inline-block;
 
   border: 1px solid var(--white);
   color: var(--white);
@@ -20,4 +11,8 @@
     background-color: var(--white);
     color: var(--dark);
   }
+}
+
+.textContainer {
+  color: var(--darkGrey);
 }
