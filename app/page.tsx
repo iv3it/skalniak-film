@@ -1,6 +1,4 @@
-'use client'
-
-import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
+import SmoothScroll from './utils/SmoothScroll';
 import { DMSans } from './fonts';
 import EntranceOpacity from './components/EntranceOpacity/EntranceOpacity';
 import Navigation from './components/Navigation/Navigation';
@@ -11,7 +9,7 @@ import Footer from './components/Footer/Footer';
 
 export default function Home() {
   return (
-    <ReactLenis root options={{ lerp: 0.1, duration: 1.5}}>
+    <SmoothScroll>
       <EntranceOpacity />
       <main className={`${DMSans.className}`}>
         <Navigation />
@@ -20,6 +18,6 @@ export default function Home() {
         <Contact />
         <Footer />
       </main>
-    </ReactLenis>
+    </SmoothScroll>
   );
 }
