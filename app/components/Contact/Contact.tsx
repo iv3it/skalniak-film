@@ -3,7 +3,7 @@ import styles from './contact.module.scss';
 
 const Contact = () => {
   return ( 
-    <section className="bg-[var(--dark)] py-10" id='contact'>
+    <section className="bg-[var(--dark)] pt-20 pb-10" id='contact'>
       <div className="container mx-auto px-4">
         <div className='flex flex-col lg:flex-row justify-between'>
           <div className='flex flex-col justify-between'>
