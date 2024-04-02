@@ -1,3 +1,4 @@
+import PhotoContainer from '../PhotoContainer/PhotoContainer';
 import VideoContainer from '../VideoContainer/VideoContainer';
 
 export default function Work() {
@@ -8,6 +9,7 @@ export default function Work() {
         <h2 className="text-[3.2rem] lg:text-[4rem] font-medium text-[var(--dark)] lg:max-w-[60%]">Eventy, filmy, zdjęcia i teledyski ślubne</h2>
         <h3 className="text-[1.8rem] lg:text-[1.4rem] text-[var(--grey)] my-6">Sprawdź moje najnowsze realizacje.</h3>
 
+        <PhotoContainer />
         <VideoContainer />
       </div>
     </section>
