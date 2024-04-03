@@ -17,13 +17,15 @@ const PhotoContainer = () => {
   }, [])
 
   useGSAP(() => {
-    gsap.to('.gsap-photo', {
-      yPercent: 25,
-      scrollTrigger: {
-        trigger: '.gsap-photoWrapper',
-        scrub: true,
-        // markers: true,
-      }
+    gsap.utils.toArray('.gsap-photo').forEach((item : any, i)=>{  
+      gsap.to(item, {
+        yPercent: 25,
+        scrollTrigger: {
+          trigger: item,
+          scrub: true,
+          // markers: true,
+        }
+      });
     });
   }, {
     scope: photoContainer,
