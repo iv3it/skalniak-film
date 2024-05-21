@@ -7,18 +7,25 @@ import About from './components/About/About';
 import Portfolio from './components/Portfolio/Portfolio';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import { getHomeStrapiData } from './utils/api';
 
-export default function Home() {
+export default async function Home() {
+  let {data} : any = await getHomeStrapiData('api/home-page');
+
   return (
     <SmoothScroll>
       <EntranceOpacity />
       <main className={`${DMSans.className}`}>
         <Navigation />
-        <Hero />
-        <About />
-        <Portfolio />
-        <Contact />
-        <Footer />
+        {data && 
+          <>
+            <Hero data={data.attributes.hero} />
+            <About data={data.attributes.about} />
+            <Portfolio data={data.attributes.portfolio} />
+            <Contact data={data.attributes.footer} />
+            <Footer/>
+          </>
+        }
       </main>
     </SmoothScroll>
   );

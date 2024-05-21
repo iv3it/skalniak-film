@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-const PhotoContainer = () => {
+const PhotoContainer = ({ data } : any) => {
   const photoContainer = useRef<HTMLElement | any>();
 
   useEffect(() => {
@@ -33,123 +33,21 @@ const PhotoContainer = () => {
 
   return ( 
     <div ref={photoContainer} className={`${styles.photosGrid}`}>
-      <div className={styles.photoBox}>
-        <div className={`${styles.photoWrapper} gsap-photoWrapper`}>
-          <Image
-            src="/photo/events/1.jpg"
-            alt="zdjęcie"
-            className={`${styles.photo} gsap-photo`}
-            width={1080}
-            height={1315}
-            priority
-          />
+      {data && data.map((item : any, index : number) =>
+        <div className={styles.photoBox} key={index}>
+          <div className={`${styles.photoWrapper} gsap-photoWrapper`}>
+            <Image
+              src="/photo/events/1.jpg"
+              alt="zdjęcie"
+              className={`${styles.photo} gsap-photo`}
+              width={1080}
+              height={1315}
+              priority
+            />
+          </div>
+          <p className='text-sm text-[var(--dark)] mt-4 font-medium text-right'>{ item.description }</p>
         </div>
-        <p className='text-sm text-[var(--dark)] mt-4 font-medium text-right'>Koncert Xyz, 2023</p>
-      </div>
-      <div className={styles.photoBox}>
-        <div className={`${styles.photoWrapper} gsap-photoWrapper`}>
-          <Image
-            src="/photo/events/2.jpg"
-            alt="zdjęcie"
-            className={`${styles.photo} gsap-photo`}
-            width={1080}
-            height={1315}
-            priority
-          />
-        </div>
-        <p className='text-sm text-[var(--dark)] mt-4 font-medium text-right'>Koncert Xyz, 2023</p>
-      </div>
-      <div className={styles.photoBox}>
-        <div className={`${styles.photoWrapper} gsap-photoWrapper`}>
-          <Image
-            src="/photo/events/3.jpg"
-            alt="zdjęcie"
-            className={`${styles.photo} gsap-photo`}
-            width={1080}
-            height={1315}
-            priority
-          />
-        </div>
-        <p className='text-sm text-[var(--dark)] mt-4 font-medium text-right'>Koncert Xyz, 2023</p>
-      </div>
-      <div className={styles.photoBox}>
-        <div className={`${styles.photoWrapper} gsap-photoWrapper`}>
-          <Image
-            src="/photo/events/4.jpg"
-            alt="zdjęcie"
-            className={`${styles.photo} gsap-photo`}
-            width={1080}
-            height={1315}
-            priority
-          />
-        </div>
-        <p className='text-sm text-[var(--dark)] mt-4 font-medium text-right'>Koncert Xyz, 2023</p>
-      </div>
-      <div className={styles.photoBox}>
-        <div className={`${styles.photoWrapper} gsap-photoWrapper`}>
-          <Image
-            src="/photo/events/5.jpg"
-            alt="zdjęcie"
-            className={`${styles.photo} gsap-photo`}
-            width={1080}
-            height={1315}
-            priority
-          />
-        </div>
-        <p className='text-sm text-[var(--dark)] mt-4 font-medium text-right'>Koncert Xyz, 2023</p>
-      </div>
-      <div className={styles.photoBox}>
-        <div className={`${styles.photoWrapper} gsap-photoWrapper`}>
-          <Image
-            src="/photo/events/6.jpg"
-            alt="zdjęcie"
-            className={`${styles.photo} gsap-photo`}
-            width={1080}
-            height={1315}
-            priority
-          />
-        </div>
-        <p className='text-sm text-[var(--dark)] mt-4 font-medium text-right'>Koncert Xyz, 2023</p>
-      </div>
-      <div className={styles.photoBox}>
-        <div className={`${styles.photoWrapper} gsap-photoWrapper`}>
-          <Image
-            src="/photo/events/7.jpg"
-            alt="zdjęcie"
-            className={`${styles.photo} gsap-photo`}
-            width={1080}
-            height={1315}
-            priority
-          />
-        </div>
-        <p className='text-sm text-[var(--dark)] mt-4 font-medium text-right'>Koncert Xyz, 2023</p>
-      </div>
-      <div className={styles.photoBox}>
-        <div className={`${styles.photoWrapper} gsap-photoWrapper`}>
-          <Image
-            src="/photo/events/8.jpg"
-            alt="zdjęcie"
-            className={`${styles.photo} gsap-photo`}
-            width={1080}
-            height={1315}
-            priority
-          />
-        </div>
-        <p className='text-sm text-[var(--dark)] mt-4 font-medium text-right'>Koncert Xyz, 2023</p>
-      </div>
-      <div className={styles.photoBox}>
-        <div className={`${styles.photoWrapper} gsap-photoWrapper`}>
-          <Image
-            src="/photo/events/9.jpg"
-            alt="zdjęcie"
-            className={`${styles.photo} gsap-photo`}
-            width={1080}
-            height={1315}
-            priority
-          />
-        </div>
-        <p className='text-sm text-[var(--dark)] mt-4 font-medium text-right'>Koncert Xyz, 2023</p>
-      </div>
+      )}
     </div>
   );
 }

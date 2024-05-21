@@ -9,11 +9,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export default function About() {
+export default function About({ data } : any) {
   const about = useRef<HTMLElement | any>();
   const gsapText = useRef<HTMLElement | any>();
   
-  useEffect(() => {
+  useEffect(() => {    
     ScrollTrigger.refresh();
   }, [])
 
@@ -38,14 +38,9 @@ export default function About() {
         <div className='flex flex-col-reverse md:flex-row justify-between items-center'>
           <div ref={gsapText} className={`${styles.textContainer} md:max-w-[80%] pr-6 md:pr-14 md:mb-0`}>
             <p className="text-[1.85rem] leading-[2.85rem] mt-10 md:mt-4">
-              Hej, mam na imię Kazimierz. Zajmuję się filmowaniem oraz fotografią.
-              Współpracuję sam lub w duecie z Kamilem, który jest fotografem. Możesz go znać pod pseudonimem „Aparat na Ślub". Tutaj można znaleźć jego prace <a href="https://aparatnaslub.com" target='_blank' rel='noreferrer' className='underline decoration-1'>aparatnaslub.com</a>. 
+              { data.description }
             </p>
-            <p className="text-[1.85rem] leading-[2.85rem] mt-4">
-              Żadne wyzwanie nie jest nam straszne. Jeśli chcesz mieć takie obrazki w swoim albumie, to napisz lub zadzwoń, aby zarezerwować termin.
-              Działam na terenie całej Polski.
-            </p>
-            <Link href="#contact" className={styles.contactLink}>CONTACT</Link>
+            <Link href={data.link.url} className={styles.contactLink}>{ data.link.text }</Link>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ import styles from './hero.module.css';
 
 gsap.registerPlugin(useGSAP);
 
-const Hero = () => {
+const Hero = ({ data } : any) => {  
   const hero = useRef<HTMLElement | any>();
   const tl = useRef<GSAPTimeline | null>(null);
 
@@ -55,11 +55,11 @@ const Hero = () => {
       <div className="container mx-auto px-4 z-10">
         <div className="flex flex-col justify-between md:items-center md:flex-row-reverse">
           <h1 className="overflow-hidden text-[var(--white)] text-[3.2rem] lg:text-[4rem] font-medium text-left md:text-right">
-            <span className={`${styles.title} gsap-title`}>Fotografia & film</span>
+            <span className={`${styles.title} gsap-title`}>{ data.title }</span>
           </h1>
           <h2 className="overflow-hidden text-[var(--white)] text-[0.95rem] mt-8 md:my-0 pr-8 md:max-w-[19.5rem]">
             <span className={`${styles.title} gsap-title`}>
-              Hej, mam na imię Kazimierz. Zajmuję się filmowaniem oraz fotografią ślubną i eventową. Współpracuję sam lub w duecie z Kamilem, który jest fotografem.
+              { data.description }
             </span>
           </h2>
         </div>
