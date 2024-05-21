@@ -64,7 +64,7 @@ export default function Offer({ data } : any) {
 
                   <ul className={styles.boxList}>
                     {box.itemsList.map((listItem : any, index : number) => 
-                      <li className={styles.boxListLi}>{listItem.item}</li>
+                      <li key={index} className={styles.boxListLi}>{listItem.item}</li>
                     )}
                   </ul>
                   <div className={styles.priceBox}>
