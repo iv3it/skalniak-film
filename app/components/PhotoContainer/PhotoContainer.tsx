@@ -37,7 +37,7 @@ const PhotoContainer = ({ data } : any) => {
         <div className={styles.photoBox} key={index}>
           <div className={`${styles.photoWrapper} gsap-photoWrapper`}>
             <Image
-              src="/photo/events/1.jpg"
+              src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${item.photo.data.attributes.url}`}
               alt="zdjęcie"
               className={`${styles.photo} gsap-photo`}
               width={1080}

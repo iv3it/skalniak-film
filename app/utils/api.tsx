@@ -6,7 +6,16 @@ const homePageQuery = qs.stringify(
     sort: ['title:asc'],
     populate: {
       hero: {
-        fields: ['title', 'description', 'background']
+        fields: ['title', 'description'],
+        populate: {
+          background: {
+            populate: {
+              data: {
+                fields: ['attributes'],
+              },
+            },
+          },
+        },
       },
       about: {
         fields: ['description'],
@@ -20,10 +29,28 @@ const homePageQuery = qs.stringify(
         fields: ['newest', 'title', 'subtitle'],
         populate: {
           photos: {
-            fields: ['description', 'photo'],
+            fields: ['description'],
+            populate: {
+              photo: {
+                populate: {
+                  data: {
+                    fields: ['attributes'],
+                  },
+                },
+              },
+            },
           },
           videos: {
-            fields: ['description', 'title', 'video'],
+            fields: ['description', 'title'],
+            populate: {
+              video: {
+                populate: {
+                  data: {
+                    fields: ['attributes'],
+                  },
+                },
+              },
+            },
           },
         },
       },

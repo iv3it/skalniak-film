@@ -46,9 +46,8 @@ const Hero = ({ data } : any) => {
         <div className={`${styles.videoWrapper} videoWrapper`}>
           <div className={styles.videoTint}></div>
 
-          <video loop autoPlay muted playsInline className={`${styles.video} gsap-video`} poster='/video-barber-first-frame.png'>
-            <source src="/video/Barber-Kozioł-Katowice.mp4" type="video/mp4"/>
-            <source src="/video/Barber-Kozioł-Katowice.webm" type="video/webm"/>
+          <video loop autoPlay muted playsInline className={`${styles.video} gsap-video`} poster=''>
+            <source src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${data.background.data.attributes.url}`} type={data.background.data.attributes.mime} />
           </video>
         </div>
       </div>
