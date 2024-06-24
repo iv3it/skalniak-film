@@ -24,7 +24,7 @@ export default function Reviews({ data } : any) {
   };
 
   return (
-    <section className='py-10 bg-[var(--dark)]'>
+    <section className='my-32 bg-[var(--dark)]'>
       <div className='container mx-auto px-4'>
         <h2 className={`${styles.sectionTitle}`}>{ data.title }</h2>
         <Slider {...settings}>

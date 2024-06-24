@@ -2,10 +2,9 @@ import { DMSans } from '../fonts';
 import SmoothScroll from '../utils/SmoothScroll';
 import EntranceOpacity from '../components/EntranceOpacity/EntranceOpacity';
 import Navigation from "../components/Navigation/Navigation";
-import Offer from "../components/Offer/Offer";
+import IndustryHero from '../components/IndustryHero/IndustryHero';
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
-import Reviews from '../components/Reviews/Reviews';
 import { getOfferStrapiData } from '../utils/api';
 
 export default async function OfferPage() {
@@ -18,13 +17,7 @@ export default async function OfferPage() {
         <Navigation />
         {data &&
           <>
-            <div className="my-32">
-              <div className='container mx-auto px-4'>
-                <h2 className="text-[var(--white)] font-medium text-[2.6rem] md:text-[3.2rem] lg:max-w-[80%] xl:max-w-[70%]">Oferta pakietów ślubnych, pakiety można mieszać dowolnie.</h2>
-              </div>
-            </div>
-            <Offer data={data.attributes.categories} />
-            <Reviews data={data.attributes.testimonials}/>
+            <IndustryHero title="Fotografia" heroBackground="/offerBoxPhoto.jpg"/>
             <Contact data={data.attributes.footer}/>
             <Footer />
           </>

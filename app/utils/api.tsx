@@ -29,7 +29,7 @@ const homePageQuery = qs.stringify(
         fields: ['newest', 'title', 'subtitle'],
         populate: {
           photos: {
-            fields: ['description'],
+            fields: ['description', 'url'],
             populate: {
               photo: {
                 populate: {

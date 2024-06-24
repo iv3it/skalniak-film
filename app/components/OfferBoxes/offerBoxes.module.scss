@@ -1,0 +1,110 @@
+.boxGrid {
+  @apply flex flex-col md:flex-row;
+  position: relative;
+  gap: 1.5rem;
+}
+
+.box {
+  @apply w-full md:w-[300px];
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  color: var(--white);
+  transition: all 300ms ease-in-out;
+  height: 80vh;
+
+  &:hover {
+    flex-grow: 2.3;
+
+    .button {
+      animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+  }
+  cursor: pointer;
+}
+
+.tint {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: var(--darkGrey);
+  opacity: 0.6;
+}
+
+.photo {
+  object-fit: cover;
+}
+
+.titleBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.description {
+  font-size: 1.15rem;
+  margin-bottom: auto;
+  max-width: 75%;
+}
+
+.title {
+  position: relative;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.arrow {
+  object-fit: contain;
+  height: 1rem;
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.button {
+  position: absolute;
+  font-size: 0.85rem;
+  bottom: 1.5rem;
+  right: 2rem;
+  background-color: var(--dark);
+  border: 1px solid var(--dark);
+  color: var(--white);
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  animation: slide-right-reversed 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-right-reversed {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+    opacity: 1;
+  }
+}

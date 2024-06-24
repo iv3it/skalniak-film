@@ -1,6 +1,7 @@
 'use client'
 
 import styles from './photoContainer.module.scss';
+import Link from 'next/link';
 import Image from "next/image";
 import { useEffect, useRef } from 'react';
 import { gsap } from "gsap";
@@ -32,20 +33,22 @@ const PhotoContainer = ({ data } : any) => {
   });
 
   return ( 
-    <div ref={photoContainer} className={`${styles.photosGrid}`}>
+    <div ref={photoContainer} className={`${styles.photosGrid} mt-20`}>
       {data && data.map((item : any, index : number) =>
         <div className={styles.photoBox} key={index}>
-          <div className={`${styles.photoWrapper} gsap-photoWrapper`}>
-            <Image
-              src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${item.photo.data.attributes.url}`}
-              alt="zdjęcie"
-              className={`${styles.photo} gsap-photo`}
-              width={1080}
-              height={1315}
-              priority
-            />
-          </div>
-          <p className='text-sm text-[var(--dark)] mt-4 font-medium text-right'>{ item.description }</p>
+          <Link href={item.url}>
+            <div className={`${styles.photoWrapper} gsap-photoWrapper`}>
+              <Image
+                src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${item.photo.data.attributes.url}`}
+                alt="zdjęcie"
+                className={`${styles.photo} gsap-photo`}
+                width={1080}
+                height={1315}
+                priority
+              />
+            </div>
+            <p className='text-xl text-[var(--white)] mt-4 font-medium text-right'>{ item.description }</p>
+          </Link>
         </div>
       )}
     </div>

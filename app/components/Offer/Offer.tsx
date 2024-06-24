@@ -48,11 +48,11 @@ export default function Offer({ data } : any) {
   });
 
   return (
-    <section ref={offer} style={{ opacity: 0 }} className="py-20 bg-[var(--dark)]">
-      <div className='container mx-auto my-10 px-4'>
+    <section ref={offer} style={{ opacity: 0 }} className="bg-[var(--dark)]">
+      <div className='container mx-auto px-4'>
         {data.map((item : any, index : number) => 
-          <div key={index}>
-            <h2 className="text-[var(--white)] text-[2.1rem] md:text-[2.3rem] mt-[6rem] mb-[2rem] font-medium" id="gsap-FotoContainer">{ item.title }</h2>
+          <div key={index} className='mb-20'>
+            <h2 className="text-[var(--white)] text-[2.1rem] md:text-[2.3rem] mb-[2rem] font-medium" id="gsap-FotoContainer">{ item.title }</h2>
 
             <div className={`${styles.boxes} grid grid-cols-1 lg:grid-cols-3 gap-4`}>
               {item.offerbox.map((box : any, index : number) => 

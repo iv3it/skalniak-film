@@ -3,12 +3,12 @@ import styles from './contact.module.scss';
 
 const Contact = ({ data } : any) => {
   return ( 
-    <section className="bg-[var(--dark)] pt-20 pb-10" id='contact'>
+    <section className="bg-[var(--dark)] mt-32 mb-10" id='contact'>
       <div className="container mx-auto px-4">
         <div className='flex flex-col lg:flex-row justify-between'>
           <div className='flex flex-col justify-between'>
-            <p className="text-[var(--white)] text-[2rem] font-medium max-w-[90%] lg:max-w-[33rem]">{ data.title }</p>
-            <p className="text-[var(--white)] text-[0.95rem] mt-[3rem] lg:mt-[7rem] max-w-[70%] md:max-w-[42%]">{ data.description }</p>
+            <p className="text-[var(--white)] text-[2.1rem] font-medium lg:max-w-[33rem]">{ data.title }</p>
+            <p className="text-[var(--white)] text-[0.95rem] mt-[3rem] lg:mt-[7rem] max-w-[70%] md:max-w-[40%]">{ data.description }</p>
           </div>
           <div className="flex flex-col justify-end mt-12 lg:mt-0">
             <div>

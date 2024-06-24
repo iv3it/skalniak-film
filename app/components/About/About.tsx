@@ -33,11 +33,11 @@ export default function About({ data } : any) {
   });
 
   return (
-    <section ref={about} className="py-20 md:py-36 min-h-screen bg-[var(--dark)] flex items-center" id='about'>
+    <section ref={about} className="my-20 md:my-32 bg-[var(--dark)] flex items-center" id='about'>
       <div className='container mx-auto px-4'>
         <div className='flex flex-col-reverse md:flex-row justify-between items-center'>
           <div ref={gsapText} className={`${styles.textContainer} md:max-w-[80%] pr-6 md:pr-14 md:mb-0`}>
-            <p className="text-[1.85rem] leading-[2.85rem] mt-10 md:mt-4">
+            <p className="text-[1.85rem] leading-[2.85rem]">
               { data.description }
             </p>
             <Link href={data.link.url} className={styles.contactLink}>{ data.link.text }</Link>
