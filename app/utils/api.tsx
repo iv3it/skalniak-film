@@ -25,35 +25,6 @@ const homePageQuery = qs.stringify(
           },
         },
       },
-      portfolio: {
-        fields: ['newest', 'title', 'subtitle'],
-        populate: {
-          photos: {
-            fields: ['description', 'url'],
-            populate: {
-              photo: {
-                populate: {
-                  data: {
-                    fields: ['attributes'],
-                  },
-                },
-              },
-            },
-          },
-          videos: {
-            fields: ['description', 'title'],
-            populate: {
-              video: {
-                populate: {
-                  data: {
-                    fields: ['attributes'],
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
       footer: {
         fields: ['title', 'description'],
         populate: {
@@ -114,6 +85,51 @@ const offerPageQuery = qs.stringify(
   }
 )
 
+const portfolioPageQuery = qs.stringify(
+  {
+    // sort: ['title:asc'],
+    populate: {
+      photo: {
+        fields: ['description', 'url'],
+        populate: {
+          photo: {
+            populate: {
+              data: {
+                fields: ['attributes'],
+              },
+            }
+          }
+        },
+      },
+      video: {
+        fields: ['description', 'title'],
+        populate: {
+          video: {
+            populate: {
+              data: {
+                fields: ['attributes'],
+              },
+            }
+          }
+        },
+      },
+      footer: {
+        fields: ['title', 'description'],
+        populate: {
+          links: {
+            fields: ['url', 'text', 'isExternal']
+          },
+          contactLinks: {
+            fields: ['url', 'text', 'isExternal']
+          }
+        }
+      }
+    },
+    publicationState: 'live',
+    locale: ['en'],
+  }
+)
+
 export async function getHomeStrapiData (path : string, option = {}) {
   let baseUrl : string | undefined = process.env.NEXT_PUBLIC_STRAPI_URL;  
   const url = new URL(path, baseUrl);
@@ -141,6 +157,29 @@ export async function getOfferStrapiData (path : string, option = {}) {
   let baseUrl : string | undefined = process.env.NEXT_PUBLIC_STRAPI_URL;  
   const url = new URL(path, baseUrl);
   url.search = offerPageQuery;
+  
+  try {
+    let fullData = await axios.get(url.href, {
+      headers: {
+        Authorization:
+          `Bearer ${process.env.STRAPI_BEARER}`,
+      },
+    })
+
+    let data = fullData.data.data;
+    
+    return {
+      data
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function getPortfolioStrapiData (path : string, option = {}) {
+  let baseUrl : string | undefined = process.env.NEXT_PUBLIC_STRAPI_URL;  
+  const url = new URL(path, baseUrl);
+  url.search = portfolioPageQuery;
   
   try {
     let fullData = await axios.get(url.href, {

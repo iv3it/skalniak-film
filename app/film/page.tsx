@@ -6,10 +6,10 @@ import IndustryHero from '../components/IndustryHero/IndustryHero';
 import VideoContainer from '../components/VideoContainer/VideoContainer';
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
-import { getHomeStrapiData } from '../utils/api';
+import { getPortfolioStrapiData } from '../utils/api';
 
-export default async function OfferPage() {
-  let {data} : any = await getHomeStrapiData('api/home-page');
+export default async function FilmPage() {
+  let {data} : any = await getPortfolioStrapiData('api/portfolio-page');
 
   return (
     <SmoothScroll>
@@ -19,7 +19,7 @@ export default async function OfferPage() {
         {data &&
           <>
             <IndustryHero title="Film" heroBackground="/offerBoxVideo.jpg"/>
-            <VideoContainer data={data.attributes.portfolio}/>
+            <VideoContainer data={data.attributes.video}/>
             <Contact data={data.attributes.footer}/>
             <Footer />
           </>

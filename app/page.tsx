@@ -5,7 +5,6 @@ import Navigation from './components/Navigation/Navigation';
 import Hero from "./components/Hero/Hero";
 import About from './components/About/About';
 import OfferBoxes from './components/OfferBoxes/OfferBoxes';
-import Portfolio from './components/Portfolio/Portfolio';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import { getHomeStrapiData } from './utils/api';
@@ -23,7 +22,6 @@ export default async function Home() {
             <Hero data={data.attributes.hero} />
             <About data={data.attributes.about} />
             <OfferBoxes />
-            <Portfolio data={data.attributes.portfolio} />
             <Contact data={data.attributes.footer} />
             <Footer/>
           </>

@@ -33,7 +33,7 @@ const PhotoContainer = ({ data } : any) => {
   });
 
   return ( 
-    <div ref={photoContainer} className={`${styles.photosGrid} mt-20`}>
+    <div ref={photoContainer} className={`${styles.photosGrid} mt-20 px-4 container mx-auto`}>
       {data && data.map((item : any, index : number) =>
         <div className={styles.photoBox} key={index}>
           <Link href={item.url}>
