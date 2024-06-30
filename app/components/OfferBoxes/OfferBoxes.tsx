@@ -26,7 +26,7 @@ const OfferBoxes = ({ data } : any) => {
   });
 
   return ( 
-    <section className='my-32' ref={offerBoxesConteiner}>
+    <section className='my-32' ref={offerBoxesConteiner} id="portfolio">
       <div className='container mx-auto px-4 max-w-[80%]'>
         <div className='flex flex-col items-center w-full'>
           <p className='text-3xl font-medium text-[var(--white)] text-center max-w-[60%] mb-20'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, cumque facere rem non voluptas quaerat.</p>
