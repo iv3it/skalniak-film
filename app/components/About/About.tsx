@@ -36,7 +36,7 @@ export default function About({ data } : any) {
     <section ref={about} className="my-20 md:my-32 bg-[var(--dark)] flex items-center" id='about'>
       <div className='container mx-auto px-4'>
         <div className='flex flex-col-reverse md:flex-row justify-between items-center'>
-          <div ref={gsapText} className={`${styles.textContainer} md:max-w-[80%] pr-6 md:pr-14 md:mb-0`}>
+          <div ref={gsapText} className={`${styles.textContainer} md:max-w-[60%] pr-6 md:pr-14 md:mb-0`}>
             <p className="text-[1.85rem] leading-[2.85rem]">
               { data.description }
             </p>
