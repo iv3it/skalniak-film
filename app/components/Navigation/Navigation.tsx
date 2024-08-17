@@ -1,21 +1,37 @@
 'use client';
 
 import styles from './navigation.module.scss';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Image from "next/image";
 import Link from 'next/link';
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
 
 const Navigation = () => {
+  const navigation = useRef<HTMLElement | any>();
   let [openMenu, setOpenMenu] = useState<Boolean>(false);
 
   let toggleMenu = () => {
     setOpenMenu(!openMenu);
   }
 
+  useGSAP(() => {    
+    gsap.timeline({ defaults: { autoAlpha: 0, opacity: 0, ease: "power4.in" } }).fromTo('.gsap-navigation', {
+      opacity: 0,
+    }, {
+      delay: 0.3,
+      opacity: 1,
+      autoAlpha: 1,
+      duration: 0.6,
+    })
+  }, { scope: navigation });
+
   return ( 
-    <div className="fixed top-0 z-20 w-full">
+    <div className="fixed top-0 z-20 w-full" ref={navigation}>
       <div className="container mx-auto px-4">
-        <nav className='hidden lg:flex justify-between items-center py-3 gsap-navigation'>
+        <nav className='hidden lg:flex justify-between items-center py-3 gsap-navigation invisible'>
           <Link href="/" className={`${styles.logo}`}>
             <Image
               src="/skalniak-logo.png"

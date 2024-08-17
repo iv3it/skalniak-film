@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import styles from './hero.module.css';
@@ -10,21 +10,18 @@ gsap.registerPlugin(useGSAP);
 
 const Hero = ({ data } : any) => {  
   const hero = useRef<HTMLElement | any>();
-  const tl = useRef<GSAPTimeline | null>(null);
 
   useGSAP(() => {
-    tl.current = gsap.timeline().to('.gsap-title', {
+    gsap.timeline().to('.gsap-title', {
+      delay: 0.4,
       opacity: 1,
       transform: "translateY(0%) skewY(0deg)",
-      duration: 0.5,
+      duration: 0.8,
       stagger: 0.5,
       ease: 'power3.out',
       zIndex: 99,
-      delay: 4,
     })
-  }, {
-    scope: hero,
-  });
+  }, { scope: hero });
 
   return (
     <section className='relative flex items-end min-h-screen py-16' ref={hero}>
