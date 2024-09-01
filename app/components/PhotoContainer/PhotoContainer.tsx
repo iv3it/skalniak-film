@@ -10,7 +10,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-const PhotoContainer = ({ data } : any) => {
+const PhotoContainer = ({portfolioPhotosCMS} : any) => {
+  let data = portfolioPhotosCMS.data.portfolioPhotosCollection.items[0];
   const photoContainer = useRef<HTMLElement | any>();
 
   useEffect(() => {
@@ -34,12 +35,12 @@ const PhotoContainer = ({ data } : any) => {
 
   return ( 
     <div ref={photoContainer} className={`${styles.photosGrid} mt-20 px-4 container mx-auto`}>
-      {data && data.map((item : any, index : number) =>
+      {data && data.photoCollection.items.map((item : any, index : number) =>
         <div className={styles.photoBox} key={index}>
           <Link href={item.url}>
             <div className={`${styles.photoWrapper} gsap-photoWrapper`}>
               <Image
-                src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${item.photo.data.attributes.url}`}
+                src={item.image.url}
                 alt="zdjęcie"
                 className={`${styles.photo} gsap-photo`}
                 width={1080}
@@ -47,7 +48,7 @@ const PhotoContainer = ({ data } : any) => {
                 priority
               />
             </div>
-            <p className='text-xl text-[var(--white)] mt-4 font-medium text-right'>{ item.description }</p>
+            <p className='text-xl text-[var(--white)] mt-4 font-medium text-right'>{item.title}</p>
           </Link>
         </div>
       )}

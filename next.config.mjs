@@ -8,6 +8,12 @@ const nextConfig = {
         port: '1337',
         pathname: '/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+        port: '',
+        pathname: `/${process.env.CONTENTFUL_SPACE_ID}/**`,
+      },
     ],
   },
 

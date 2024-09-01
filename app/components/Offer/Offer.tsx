@@ -8,7 +8,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export default function Offer({ data } : any) {
+export default function Offer({offerCMS} : any) {
+  let data = offerCMS.data.offerCollection.items[0];
   const offer = useRef<HTMLElement | any>();
   
   useEffect(() => {
@@ -50,26 +51,26 @@ export default function Offer({ data } : any) {
   return (
     <section ref={offer} style={{ opacity: 0 }} className="bg-[var(--dark)]">
       <div className='container mx-auto px-4'>
-        {data.map((item : any, index : number) => 
-          <div key={index} className='mb-20'>
-            <h2 className="text-[var(--white)] text-[2.1rem] md:text-[2.3rem] mb-[2rem] font-medium" id="gsap-FotoContainer">{ item.title }</h2>
+        {data.packetTypeCollection.items.map((item : any, index : number) => 
+          <div key='1' className='mb-20'>
+            <h2 className="text-[var(--white)] text-[2.1rem] md:text-[2.3rem] mb-[2rem] font-medium" id="gsap-FotoContainer">{item.name}</h2>
 
             <div className={`${styles.boxes} grid grid-cols-1 lg:grid-cols-3 gap-4`}>
-              {item.offerbox.map((box : any, index : number) => 
+              {item.packetCollection.items.map((box : any, index : number) => 
                 <div className={`${styles.box} gsap-boxFoto`} key={index}>
                   <div className={styles.packet}>
-                    <p className={styles.packetText}>{ box.packet }</p>
-                    <p className={styles.packetName}>{ box.packetName }</p>
+                    <p className={styles.packetText}>{box.text}</p>
+                    <p className={styles.packetName}>{box.name}</p>
                   </div>
 
                   <ul className={styles.boxList}>
-                    {box.itemsList.map((listItem : any, index : number) => 
-                      <li key={index} className={styles.boxListLi}>{listItem.item}</li>
+                    {box.includesList.map((listItem : any, index : number) => 
+                      <li key={index} className={styles.boxListLi}>{listItem}</li>
                     )}
                   </ul>
                   <div className={styles.priceBox}>
                     <p className={styles.priceText}>Cena</p>
-                    <p className={styles.price}>{ box.price }</p>
+                    <p className={styles.price}>{box.price}</p>
                   </div>
                 </div>
               )}

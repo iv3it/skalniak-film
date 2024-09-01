@@ -9,7 +9,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export default function About({ data } : any) {
+export default function About({aboutMeCMS} : any) {
+  let data = aboutMeCMS.data.aboutMeCollection.items[0];
   const about = useRef<HTMLElement | any>();
   const gsapText = useRef<HTMLElement | any>();
   
@@ -38,9 +39,9 @@ export default function About({ data } : any) {
         <div className='flex flex-col-reverse md:flex-row justify-between items-center'>
           <div ref={gsapText} className={`${styles.textContainer} md:max-w-[60%] pr-6 md:pr-14 md:mb-0`}>
             <p className="text-[1.85rem] leading-[2.85rem]">
-              { data.description }
+              {data.description}
             </p>
-            <Link href={data.link.url} className={styles.contactLink}>{ data.link.text }</Link>
+            <Link href={data.button.url} className={styles.contactLink}>{data.button.text}</Link>
           </div>
         </div>
       </div>

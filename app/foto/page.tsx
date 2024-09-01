@@ -6,24 +6,66 @@ import IndustryHero from '../components/IndustryHero/IndustryHero';
 import PhotoContainer from '../components/PhotoContainer/PhotoContainer';
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
-import { getPortfolioStrapiData } from '../utils/api';
+import { fetchData } from '../utils/cms';
 
 export default async function FotoPage() {
-  let {data} : any = await getPortfolioStrapiData('api/portfolio-page');
+  let contactQuery = `
+    query {
+      footerCollection {
+        items {
+          description
+          descriptionShort
+          socialMediaCollection {
+            items {
+              url
+              text
+              isExternal
+            }
+          }
+          contactLinksCollection {
+            items {
+              url
+              text
+              isExternal
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  let portfolioPhotos = `
+    query {
+      portfolioPhotosCollection(limit: 1) {
+        items {
+          title
+          description
+          photoCollection(limit: 100) {
+            items {
+              title
+              url
+              image {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const contactCMS = await fetchData(contactQuery);
+  const portfolioPhotosCMS = await fetchData(portfolioPhotos);
 
   return (
     <SmoothScroll>
       <EntranceOpacity />
       <main className={`${DMSans.className}`}>
         <Navigation />
-        {data &&
-          <>
-            <IndustryHero title="Fotografia" heroBackground="/offerBoxPhoto.jpg"/>
-            <PhotoContainer data={data.attributes.photo} />
-            <Contact data={data.attributes.footer} />
-            <Footer />
-          </>
-        }
+        <IndustryHero industryHeroCMS={portfolioPhotosCMS.data.portfolioPhotosCollection} heroBackground="/offerBoxPhoto.jpg"/>
+        <PhotoContainer portfolioPhotosCMS={portfolioPhotosCMS} />
+        <Contact contactCMS={contactCMS} />
+        <Footer />
       </main>
     </SmoothScroll>
   )

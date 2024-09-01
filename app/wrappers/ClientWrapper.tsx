@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DMSans } from '../fonts';
 import Loader from '../components/Loader/Loader';
 import Navigation from '../components/Navigation/Navigation';
@@ -9,8 +9,8 @@ import OfferBoxes from '../components/OfferBoxes/OfferBoxes';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
 
-const ClientWrapper = ({ data } : any) => {
-  let [isLoading, setIsLoading] : any = useState(true);
+const ClientWrapper = ({heroCMS, aboutMeCMS, contactCMS} : any) => {
+  let [isLoading, setIsLoading] : any = useState(false);
 
   let isLoaded = (loaded : boolean) => {
     setIsLoading(loaded);
@@ -22,13 +22,13 @@ const ClientWrapper = ({ data } : any) => {
         {isLoading &&
           <Loader isLoading={isLoaded}/>
         }
-        {!isLoading && data && 
+        {!isLoading && 
           <>
-            <Hero data={data.attributes.hero} />
+            <Hero heroCMS={heroCMS}/>
             <Navigation />
-            <About data={data.attributes.about} />
+            <About aboutMeCMS={aboutMeCMS}/>
             <OfferBoxes />
-            <Contact data={data.attributes.footer} />
+            <Contact contactCMS={contactCMS}/>
             <Footer/>
           </>
         }

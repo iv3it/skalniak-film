@@ -3,7 +3,9 @@
 import styles from './reviews.module.scss';
 import Slider from "react-slick";
 
-export default function Reviews({ data } : any) {
+export default function Reviews({testimonialsCMS} : any) {
+  let data = testimonialsCMS.data.testimonialsCollection.items[0];
+
   let settings = {
     autoplay: true,
     dots: false,
@@ -26,13 +28,13 @@ export default function Reviews({ data } : any) {
   return (
     <section className='my-32 bg-[var(--dark)]'>
       <div className='container mx-auto px-4'>
-        <h2 className={`${styles.sectionTitle}`}>{ data.title }</h2>
+        <h2 className={`${styles.sectionTitle}`}>Opinie</h2>
         <Slider {...settings}>
-          {data.items.map((item : any, index : number) => 
+          {data.testimonialCollection.items.map((item : any, index : number) => 
             <div key={index}>
               <div className={styles.box}>
-                <p className={styles.review}>{ item.description }</p>
-                <p className={styles.name}>{ item.name }</p>
+                <p className={styles.review}>{item.text}</p>
+                <p className={styles.name}>{item.name}</p>
               </div>
             </div>
           )}

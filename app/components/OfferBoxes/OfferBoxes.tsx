@@ -11,7 +11,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 
-const OfferBoxes = ({ data } : any) => {
+const OfferBoxes = () => {
   const offerBoxesConteiner = useRef<HTMLElement | any>();
 
   useEffect(() => {
