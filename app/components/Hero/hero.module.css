@@ -1,3 +1,7 @@
+.hero {
+  opacity: 0;
+}
+
 .title {
   display: block;
   transform: translateY(100%) skewY(10deg);

@@ -13,20 +13,25 @@ const Hero = ({heroCMS} : any) => {
   const hero = useRef<HTMLElement | any>();
 
   useGSAP(() => {
-    gsap.timeline().to('.gsap-title', {
-      delay: 0.4,
+    gsap.timeline().to(hero.current, {
+      duration: 2,
+      opacity: 1,
+    })
+    .to('.gsap-title', {
+      delay: 0.2,
       opacity: 1,
       transform: "translateY(0%) skewY(0deg)",
       duration: 0.8,
       stagger: 0.5,
       ease: 'power3.out',
       zIndex: 99,
-    })
+    }, '<')
   }, { scope: hero });
 
   return (
-    <section className='relative flex items-end min-h-screen py-16' ref={hero}>
+    <section className={`${styles.hero} relative flex items-end min-h-screen py-16`} ref={hero}>
       <Image src={`${(data.heroBackground.url)}`} alt="zdjęcie" className={`${styles.photo}`} fill priority />
+
       <div className="relative container mx-auto px-4 z-20">
         <div className="flex flex-col justify-between md:items-center md:flex-row-reverse">
           <h1 className="overflow-hidden text-[var(--white)] text-[3.2rem] lg:text-[4rem] font-medium text-left md:text-right">
