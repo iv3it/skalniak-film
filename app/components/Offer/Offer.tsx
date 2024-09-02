@@ -52,7 +52,7 @@ export default function Offer({offerCMS} : any) {
     <section ref={offer} style={{ opacity: 0 }} className="bg-[var(--dark)]">
       <div className='container mx-auto px-4'>
         {data.packetTypeCollection.items.map((item : any, index : number) => 
-          <div key='1' className='mb-20'>
+          <div key={index} className='mb-20'>
             <h2 className="text-[var(--white)] text-[2.1rem] md:text-[2.3rem] mb-[2rem] font-medium" id="gsap-FotoContainer">{item.name}</h2>
 
             <div className={`${styles.boxes} grid grid-cols-1 lg:grid-cols-3 gap-4`}>
