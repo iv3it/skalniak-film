@@ -33,6 +33,23 @@ export default async function Home() {
     }
   `;
 
+  let offerBoxesQuery = `
+    query {
+      offerBoxesCollection {
+        items {
+          title
+          description
+          link {
+            url
+          }
+          background {
+            url
+          }
+        }
+      }
+    }
+  `;
+
   let contactQuery = `
     query {
       footerCollection {
@@ -60,12 +77,14 @@ export default async function Home() {
 
   const heroCMS = await fetchData(heroQuery);
   const aboutMeCMS = await fetchData(aboutMeQuery);
+  const offerBoxesCMS = await fetchData(offerBoxesQuery);
   const contactCMS = await fetchData(contactQuery);
+  
 
   return (
     <SmoothScroll>
       <EntranceOpacity />
-      <ClientWrapper heroCMS={heroCMS} aboutMeCMS={aboutMeCMS} contactCMS={contactCMS}/>
+      <ClientWrapper heroCMS={heroCMS} aboutMeCMS={aboutMeCMS} offerBoxesCMS={offerBoxesCMS} contactCMS={contactCMS}/>
     </SmoothScroll>
   );
 }

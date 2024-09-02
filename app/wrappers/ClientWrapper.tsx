@@ -9,7 +9,7 @@ import OfferBoxes from '../components/OfferBoxes/OfferBoxes';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
 
-const ClientWrapper = ({heroCMS, aboutMeCMS, contactCMS} : any) => {
+const ClientWrapper = ({heroCMS, aboutMeCMS, offerBoxesCMS, contactCMS} : any) => {
   let [isLoading, setIsLoading] : any = useState(true);
 
   let isLoaded = (loaded : boolean) => {
@@ -27,7 +27,7 @@ const ClientWrapper = ({heroCMS, aboutMeCMS, contactCMS} : any) => {
             <Hero heroCMS={heroCMS}/>
             <Navigation />
             <About aboutMeCMS={aboutMeCMS}/>
-            <OfferBoxes />
+            <OfferBoxes offerBoxesCMS={offerBoxesCMS}/>
             <Contact contactCMS={contactCMS}/>
             <Footer/>
           </>
