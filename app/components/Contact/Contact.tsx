@@ -5,7 +5,7 @@ const Contact = ({contactCMS} : any) => {
   let data = contactCMS.data.footerCollection.items[0];
 
   return ( 
-    <section className="bg-[var(--dark)] mt-32 mb-10" id='contact'>
+    <section className="bg-[var(--dark)] mt-32 mb-10" id='kontakt'>
       <div className="container mx-auto px-4">
         <div className='flex flex-col lg:flex-row justify-between'>
           <div className='flex flex-col justify-between'>
