@@ -7,71 +7,9 @@ import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import Reviews from '../components/Reviews/Reviews';
 import { fetchData } from '../utils/cms';
+import { offerQuery, testimonialsQuery, contactQuery } from '../utils/cmsQueries';
 
 export default async function OfferPage() {
-  let offerQuery = `
-    query {
-      offerCollection(limit: 1) {
-        items {
-          description
-          packetTypeCollection(limit: 5) {
-            items {
-              name
-              packetCollection(limit: 20) {
-                items {
-                  text
-                  name
-                  price
-                  includesList
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
-
-  let testimonialsQuery = `
-    query {
-      testimonialsCollection {
-        items {
-          testimonialCollection {
-            items {
-              text
-              name
-            }
-          }
-        }
-      }
-    }
-  `;
-
-  let contactQuery = `
-    query {
-      footerCollection {
-        items {
-          description
-          descriptionShort
-          socialMediaCollection {
-            items {
-              url
-              text
-              isExternal
-            }
-          }
-          contactLinksCollection {
-            items {
-              url
-              text
-              isExternal
-            }
-          }
-        }
-      }
-    }
-  `;
-
   const offerCMS = await fetchData(offerQuery);
   const testimonialsCMS = await fetchData(testimonialsQuery);
   const contactCMS = await fetchData(contactQuery);

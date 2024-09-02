@@ -7,58 +7,11 @@ import VideoContainer from '../components/VideoContainer/VideoContainer';
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import { fetchData } from '../utils/cms';
+import { portfolioVideos, contactQuery } from '../utils/cmsQueries';
 
 export default async function FilmPage() {
-  let contactQuery = `
-    query {
-      footerCollection {
-        items {
-          description
-          descriptionShort
-          socialMediaCollection {
-            items {
-              url
-              text
-              isExternal
-            }
-          }
-          contactLinksCollection {
-            items {
-              url
-              text
-              isExternal
-            }
-          }
-        }
-      }
-    }
-  `;
-  
-  let portfolioVideos = `
-    query {
-      portfolioVideosCollection(limit: 1) {
-        items {
-          title
-          description
-          heroBackground {
-            url
-          }
-          videoCollection(limit: 100) {
-            items {
-              title
-              description
-              video {
-                url
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
-
-  const contactCMS = await fetchData(contactQuery);
   const portfolioVideosCMS = await fetchData(portfolioVideos);
+  const contactCMS = await fetchData(contactQuery);
 
   return (
     <SmoothScroll>

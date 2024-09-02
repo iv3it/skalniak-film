@@ -7,58 +7,11 @@ import PhotoContainer from '../components/PhotoContainer/PhotoContainer';
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import { fetchData } from '../utils/cms';
+import { portfolioPhotosQuery, contactQuery } from '../utils/cmsQueries';
 
 export default async function FotoPage() {
-  let contactQuery = `
-    query {
-      footerCollection {
-        items {
-          description
-          descriptionShort
-          socialMediaCollection {
-            items {
-              url
-              text
-              isExternal
-            }
-          }
-          contactLinksCollection {
-            items {
-              url
-              text
-              isExternal
-            }
-          }
-        }
-      }
-    }
-  `;
-
-  let portfolioPhotos = `
-    query {
-      portfolioPhotosCollection(limit: 1) {
-        items {
-          title
-          description
-          heroBackground {
-            url
-          }
-          photoCollection(limit: 100) {
-            items {
-              title
-              url
-              image {
-                url
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
-
+  const portfolioPhotosCMS = await fetchData(portfolioPhotosQuery);
   const contactCMS = await fetchData(contactQuery);
-  const portfolioPhotosCMS = await fetchData(portfolioPhotos);
 
   return (
     <SmoothScroll>
