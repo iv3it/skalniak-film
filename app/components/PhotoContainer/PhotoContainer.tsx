@@ -37,7 +37,7 @@ const PhotoContainer = ({portfolioPhotosCMS} : any) => {
     <div ref={photoContainer} className={`${styles.photosGrid} mt-20 px-4 container mx-auto`}>
       {data && data.photoCollection.items.map((item : any, index : number) =>
         <div className={styles.photoBox} key={index}>
-          <Link href={item.url}>
+          <Link href={item.image.url} target='_blank' rel='noopener'>
             <div className={`${styles.photoWrapper} gsap-photoWrapper`}>
               <Image
                 src={item.image.url}
