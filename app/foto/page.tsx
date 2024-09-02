@@ -40,6 +40,9 @@ export default async function FotoPage() {
         items {
           title
           description
+          heroBackground {
+            url
+          }
           photoCollection(limit: 100) {
             items {
               title
@@ -62,7 +65,7 @@ export default async function FotoPage() {
       <EntranceOpacity />
       <main className={`${DMSans.className}`}>
         <Navigation />
-        <IndustryHero industryHeroCMS={portfolioPhotosCMS.data.portfolioPhotosCollection} heroBackground="/offerBoxPhoto.jpg"/>
+        <IndustryHero industryHeroCMS={portfolioPhotosCMS.data.portfolioPhotosCollection} />
         <PhotoContainer portfolioPhotosCMS={portfolioPhotosCMS} />
         <Contact contactCMS={contactCMS} />
         <Footer />

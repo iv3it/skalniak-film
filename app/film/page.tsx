@@ -40,6 +40,9 @@ export default async function FilmPage() {
         items {
           title
           description
+          heroBackground {
+            url
+          }
           videoCollection(limit: 100) {
             items {
               title
@@ -62,7 +65,7 @@ export default async function FilmPage() {
       <EntranceOpacity />
       <main className={`${DMSans.className}`}>
         <Navigation />
-        <IndustryHero industryHeroCMS={portfolioVideosCMS.data.portfolioVideosCollection} heroBackground="/offerBoxVideo.jpg"/>
+        <IndustryHero industryHeroCMS={portfolioVideosCMS.data.portfolioVideosCollection} />
         <VideoContainer portfolioVideosCMS={portfolioVideosCMS}/>
         <Contact contactCMS={contactCMS}/>
         <Footer />

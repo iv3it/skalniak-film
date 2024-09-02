@@ -8,7 +8,7 @@ const IndustryHero = ({ industryHeroCMS, heroBackground } : any) => {
     <>
       <div className="relative">
         <Image
-          src={heroBackground}
+          src={data.heroBackground.url}
           alt="zdjęcie"
           className={`${styles.photo} gsap-offerBox`}
           width={1080}
