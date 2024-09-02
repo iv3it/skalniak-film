@@ -44,11 +44,11 @@ const Loader = ({ isLoading } : any) => {
         <div className={`${styles.loader} gsap-loader scale-100`}>
           <div className={`${styles.boxWrapper} relative flex w-[40%] h-[30%] gsap-boxWrapper`}>
             <div className={`${styles.box} gsap-box bg-[#6fa0c0]`}></div>
+            <Image src="/photo/hero/1.jpg" alt="zdjęcie" className={`${styles.box} gsap-boxImage`} fill priority />
+            <div className={`${styles.box} gsap-box bg-[#6fa0c0]`}></div>
             <Image src="/photo/hero/2.jpg" alt="zdjęcie" className={`${styles.box} gsap-boxImage`} fill priority />
             <div className={`${styles.box} gsap-box bg-[#6fa0c0]`}></div>
             <Image src="/photo/hero/3.jpg" alt="zdjęcie" className={`${styles.box} gsap-boxImage`} fill priority />
-            <div className={`${styles.box} gsap-box bg-[#6fa0c0]`}></div>
-            <Image src="/photo/hero/4.jpg" alt="zdjęcie" className={`${styles.box} gsap-boxImage`} fill priority />
             <div className={`${styles.box} gsap-box bg-[#6fa0c0]`}></div>
           </div>
 
