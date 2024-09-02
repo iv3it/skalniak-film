@@ -4,3 +4,14 @@
   width: 100vw;
   object-fit: cover;
 }
+
+.textContainer {
+  color: var(--darkGrey);
+}
+
+.title {
+  display: block;
+  transform: translateY(100%) skewY(10deg);
+  opacity: 0;
+  will-change: transform opacity;
+}
