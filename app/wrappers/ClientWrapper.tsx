@@ -10,7 +10,7 @@ import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
 
 const ClientWrapper = ({heroCMS, aboutMeCMS, contactCMS} : any) => {
-  let [isLoading, setIsLoading] : any = useState(false);
+  let [isLoading, setIsLoading] : any = useState(true);
 
   let isLoaded = (loaded : boolean) => {
     setIsLoading(loaded);

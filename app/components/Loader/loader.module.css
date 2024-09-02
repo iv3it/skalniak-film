@@ -6,6 +6,15 @@
   width: 100%;
   z-index: 99999;
   overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxWrapper {
+  opacity: 0;
 }
 
 .box {
