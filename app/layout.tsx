@@ -7,8 +7,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Skalniak FILM | Kazimierz Skalniak",
-  description: "Filmowanie eventów, reklam, ślubów.",
+  title: "Kazimierz Skalniak FILM",
+  description: "Kazimierz Skalniak Filmowanie i Fotografia. Sesje weselne, plenerowe, eventowe, teledyski, zdjęcia motoryzacyjne na terenie województwa świętokrzyskiego i całej Polski.",
+  themeColor: '#dc8f42'
 };
 
 export default function RootLayout({

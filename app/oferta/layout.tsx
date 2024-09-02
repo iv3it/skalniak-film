@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Oferta Ślubna | Skalniak FILM | Kazimierz Skalniak",
-  description: "Oferta ślubna, zdjęcia, film.",
+  description: "Oferta pakietów ślubnych dostosowanych do Twoich potrzeb.",
+  themeColor: '#dc8f42'
 };
 
 export default function DashboardLayout({
