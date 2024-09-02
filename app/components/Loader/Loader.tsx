@@ -42,17 +42,17 @@ const Loader = ({ isLoading } : any) => {
     <div className="fixed top-0 left-0 w-full h-full z-50 bg-[var(--dark)] overflow-y-scroll" ref={loader}>
       <div className={`${styles.loader} gsap-loader scale-100`}>
         <div className={`${styles.boxWrapper} relative flex w-[40%] h-[30%] gsap-boxWrapper`}>
-          <div className={`${styles.box} gsap-box bg-[#dc8f42]`}></div>
+          <div className={`${styles.box} gsap-box bg-[#6fa0c0]`}></div>
           <Image src="/photo/hero/1.jpg" alt="zdjęcie" className={`${styles.box} gsap-boxImage`} fill priority />
-          <div className={`${styles.box} gsap-box bg-[#dc8f42]`}></div>
+          <div className={`${styles.box} gsap-box bg-[#6fa0c0]`}></div>
           <Image src="/photo/hero/2.jpg" alt="zdjęcie" className={`${styles.box} gsap-boxImage`} fill priority />
-          <div className={`${styles.box} gsap-box bg-[#dc8f42]`}></div>
+          <div className={`${styles.box} gsap-box bg-[#6fa0c0]`}></div>
           <Image src="/photo/hero/3.jpg" alt="zdjęcie" className={`${styles.box} gsap-boxImage`} fill priority />
-          <div className={`${styles.box} gsap-box bg-[#dc8f42]`}></div>
+          <div className={`${styles.box} gsap-box bg-[#6fa0c0]`}></div>
           <Image src="/photo/hero/4.jpg" alt="zdjęcie" className={`${styles.box} gsap-boxImage`} fill priority />
-          <div className={`${styles.box} gsap-box bg-[#dc8f42]`}></div>
+          <div className={`${styles.box} gsap-box bg-[#6fa0c0]`}></div>
           <Image src="/photo/hero/5.jpg" alt="zdjęcie" className={`${styles.box} gsap-boxImage`} fill priority />
-          <div className={`${styles.box} gsap-box bg-[#dc8f42]`}></div>
+          <div className={`${styles.box} gsap-box bg-[#6fa0c0]`}></div>
         </div>
       </div>
     </div>
