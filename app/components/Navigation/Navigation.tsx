@@ -81,12 +81,11 @@ const Navigation = () => {
 
             <div className='mt-16'>
               <ul className={`${styles.navListMobile}`}>
+                <li className={styles.navListItemMobile}><Link href="/#about" onClick={() => setOpenMenu(false)}>O mnie</Link></li>
                 <li className={styles.navListItemMobile}><Link href="/#portfolio" onClick={() => setOpenMenu(false)}>Portfolio</Link></li>
                 <li className={styles.navListItemMobile}><Link href="/oferta" onClick={() => setOpenMenu(false)}>Oferta</Link></li>
-                <li className={styles.navListItemMobile}><Link href="/#about" onClick={() => setOpenMenu(false)}>O mnie</Link></li>
-                <li className={styles.navListItemMobile}><a href='https://www.facebook.com/people/Kazimierz-Skalniak-Film/100082278789126/' target='_blank' rel='noreferrer' onClick={() => setOpenMenu(false)}>Facebook</a></li>
-                <li className={styles.navListItemMobile}><a href='https://www.instagram.com/kazimierz_skalniak/' target='_blank' rel='noreferrer' onClick={() => setOpenMenu(false)}>Instagram</a></li>
-                <li className={styles.navListItemMobile}><a href='https://www.youtube.com/channel/UCW0T7ISuP2Nn7BD3NHY-ihA' target='_blank' rel='noreferrer' onClick={() => setOpenMenu(false)}>Youtube</a></li>
+                <li className={styles.navListItemMobile}><Link href="/fotografia" onClick={() => setOpenMenu(false)}>Fotografia</Link></li>
+                <li className={styles.navListItemMobile}><Link href="/film" onClick={() => setOpenMenu(false)}>Film</Link></li>
                 <li className={styles.navListItemMobile}><Link href="#kontakt" onClick={() => setOpenMenu(false)}>Kontakt</Link></li>
               </ul>
             </div>
