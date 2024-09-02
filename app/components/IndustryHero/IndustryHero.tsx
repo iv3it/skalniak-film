@@ -59,7 +59,7 @@ const IndustryHero = ({ industryHeroCMS } : any) => {
         </div>
       </div>
       <div className={`${styles.textContainer} container mx-auto my-32 px-4`}>
-        <h2 className="font-medium text-[1.35rem] md:text-[2.1rem] lg:max-w-[80%] xl:max-w-[70%] gsap-text">{ data.description }</h2>
+        <h2 className="font-medium text-[2.6rem] md:text-[3.2rem] lg:max-w-[80%] xl:max-w-[70%] gsap-text">{ data.description }</h2>
       </div>
     </div>
   );

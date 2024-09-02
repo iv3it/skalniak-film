@@ -116,12 +116,20 @@ export let portfolioPhotosQuery = `
         heroBackground {
           url
         }
-        photoCollection(limit: 100) {
+        photoCategoriesCollection(limit: 10) {
           items {
             title
-            url
-            image {
-              url
+            photosCollection {
+              items {
+                title
+                description
+                contentType
+                fileName
+                size
+                url
+                width
+                height
+              } 
             }
           }
         }
