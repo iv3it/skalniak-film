@@ -4,13 +4,18 @@ import Image from "next/image";
 import { useEffect, useRef } from 'react';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from './hero.module.css';
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Hero = ({heroCMS} : any) => {  
   let data = heroCMS.data.heroCollection.items[0];
   const hero = useRef<HTMLElement | any>();
+
+  useEffect(() => {    
+    ScrollTrigger.refresh();
+  }, [])
 
   useGSAP(() => {
     gsap.timeline().to(hero.current, {
@@ -26,11 +31,22 @@ const Hero = ({heroCMS} : any) => {
       ease: 'power3.out',
       zIndex: 99,
     }, '<')
+
+    gsap.to('.gsap-heroBg', {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: '.gsap-heroBg',
+        start: "bottom bottom-=100px",
+        end: "bottom top",
+        scrub: true, 
+        // markers: true,
+      }
+    });
   }, { scope: hero });
 
   return (
     <section className={`${styles.hero} relative flex items-end min-h-screen py-16`} ref={hero}>
-      <Image src={`${(data.heroBackground.url)}`} alt="zdjęcie" className={`${styles.photo}`} fill priority />
+      <Image src={`${(data.heroBackground.url)}`} alt="zdjęcie" className={`${styles.photo} gsap-heroBg`} fill priority />
 
       <div className="relative container mx-auto px-4 z-20">
         <div className="flex flex-col justify-between md:items-center md:flex-row-reverse">

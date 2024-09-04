@@ -37,6 +37,17 @@ const IndustryHero = ({ industryHeroCMS } : any) => {
         // markers: true,
       }
     });
+
+    gsap.to('.gsap-heroBg', {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: '.gsap-heroBg',
+        start: "bottom bottom-=100px",
+        end: "bottom top",
+        scrub: true, 
+        // markers: true,
+      }
+    });
   }, { scope: industryHero });
 
   return (
@@ -45,13 +56,13 @@ const IndustryHero = ({ industryHeroCMS } : any) => {
         <Image
           src={data.heroBackground.url}
           alt="zdjęcie"
-          className={`${styles.photo} gsap-offerBox`}
+          className={`${styles.photo} gsap-heroBg`}
           width={1080}
           height={1315}
           priority
         />
         <div className='absolute w-screen h-screen top-0 py-16'>
-          <div className={`container mx-auto h-full px-4 flex items-end gsap-offerBox`}>
+          <div className={`container mx-auto h-full px-4 flex items-end`}>
             <h1 className="overflow-hidden text-[var(--white)] font-medium text-[2.6rem] md:text-[7.2rem]">
               <span className={`${styles.title} gsap-title`}>{data.title}</span>
             </h1>
