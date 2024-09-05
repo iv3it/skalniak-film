@@ -20,7 +20,6 @@ export let aboutMeQuery = `
         button {
           url
           text
-          isExternal
         }
       }
     }
@@ -54,14 +53,12 @@ export let contactQuery = `
           items {
             url
             text
-            isExternal
           }
         }
         contactLinksCollection {
           items {
             url
             text
-            isExternal
           }
         }
       }
