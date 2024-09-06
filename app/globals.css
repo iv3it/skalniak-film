@@ -27,3 +27,30 @@ body {
   color: var(--white);
   background-color: var(--dark);
 }
+
+.link {
+  @apply py-3 px-6 mt-12 shrink-0 inline-block;
+
+  background-color: var(--white);
+  color: var(--dark);
+  border: 1px solid var(--white);
+  font-size: 0.75rem;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.link:hover {
+  background-color: transparent;
+  color: var(--white);
+  border: 1px solid var(--white);
+}
+
+.bg-404 {
+  opacity: 0.3;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
