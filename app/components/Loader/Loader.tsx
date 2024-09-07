@@ -1,5 +1,6 @@
 'use client'
 
+import { CostarOliya } from '../../fonts';
 import Image from "next/image";
 import { useRef } from 'react';
 import { gsap } from "gsap";
@@ -52,14 +53,15 @@ const Loader = ({ isLoading } : any) => {
             <div className={`${styles.box} gsap-box bg-[#6fa0c0]`}></div>
           </div>
 
-          <Image
+          {/* <Image
             className='mt-6 absolute bottom-5 right-5'
             src="/skalniak-logo.png"
             alt="Kazimierz Skalniak FILM"
             width={86}
             height={20}
             priority
-          />
+            /> */}
+            <h2 className={`${CostarOliya.className} text-[1.9rem] `}>Skalniak</h2>
         </div>
     </div>
   );

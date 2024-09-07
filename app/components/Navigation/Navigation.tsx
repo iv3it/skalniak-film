@@ -1,5 +1,6 @@
 'use client';
 
+import { CostarOliya } from '../../fonts';
 import styles from './navigation.module.scss';
 import { useRef, useState } from 'react';
 import Image from "next/image";
@@ -33,13 +34,15 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <nav className='hidden lg:flex justify-between items-center py-3 gsap-navigation invisible'>
           <Link href="/" className={`${styles.logo}`}>
-            <Image
+            {/* <Image
               src="/skalniak-logo.png"
               alt="background image"
               width={144}
               height={32}
               priority
-            />
+            /> */}
+
+            <h2 className={`${CostarOliya.className} text-[1.9rem]`}>Skalniak</h2>
           </Link>
           <ul className={styles.navList}>
             <li className={styles.navListItem}><Link href="/#portfolio" className={styles.navListItemA}>PORTFOLIO</Link></li>
@@ -51,14 +54,16 @@ const Navigation = () => {
 
         <nav className='flex justify-between items-center py-3 lg:hidden'>
           <Link href="/">
-            <Image
+            {/* <Image
               src="/skalniak-logo.png"
               alt="background image"
               className={`${styles.logo}`}
               width={288}
               height={63}
               priority
-            />
+            /> */}
+
+            <h2 className={`${CostarOliya.className} text-[1.9rem]`}>Skalniak</h2>
           </Link>
           <button className={styles.navButton} onClick={() => toggleMenu()}>MENU</button>
         </nav>
@@ -67,14 +72,16 @@ const Navigation = () => {
           <nav className={`${styles.navigationMobile} py-3 px-4 navigation-mobile`}>
             <div className='flex justify-between'>
               <Link href="/" onClick={() => setOpenMenu(false)}>
-                <Image
+                {/* <Image
                   src="/skalniak-logo.png"
                   alt="background image"
                   className={`${styles.logo} py-2`}
                   width={288}
                   height={63}
                   priority
-                />
+                /> */}
+
+                <h2 className={`${CostarOliya.className} text-[1.9rem]`}>Skalniak</h2>
               </Link>
               <button className={styles.navButton} onClick={() => toggleMenu()}>ZAMKNIJ</button>
             </div>

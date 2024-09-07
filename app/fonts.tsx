@@ -6,3 +6,13 @@ export const DMSans = DM_Sans({
   variable: '--font-DM-Sans',
   display: 'swap',
 })
+
+export const CostarOliya = localFont({
+  src: [
+    {
+      path: '../public/fonts/Costar-Oliya.ttf',
+      weight: '400'
+    },
+  ],
+  variable: '--font-costarOliya'
+})
