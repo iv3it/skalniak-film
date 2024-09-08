@@ -40,9 +40,9 @@ body {
 }
 
 .link:hover {
-  background-color: transparent;
-  color: var(--white);
   border: 1px solid var(--white);
+  color: var(--white);
+  background-color: transparent;
 }
 
 .bg-404 {

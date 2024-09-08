@@ -1,5 +1,4 @@
 'use client'
-
 import { CostarOliya } from '../../fonts';
 import Image from "next/image";
 import { useRef } from 'react';
@@ -60,8 +59,9 @@ const Loader = ({ isLoading } : any) => {
             width={86}
             height={20}
             priority
-            /> */}
-            <h2 className={`${CostarOliya.className} text-[1.9rem] `}>Skalniak</h2>
+          /> */}
+          
+          <h2 className={`${CostarOliya.className} text-[1.9rem] mt-4 block`}>Skalniak</h2>
         </div>
     </div>
   );

@@ -41,7 +41,6 @@ const Navigation = () => {
               height={32}
               priority
             /> */}
-
             <h2 className={`${CostarOliya.className} text-[1.9rem]`}>Skalniak</h2>
           </Link>
           <ul className={styles.navList}>
@@ -62,7 +61,6 @@ const Navigation = () => {
               height={63}
               priority
             /> */}
-
             <h2 className={`${CostarOliya.className} text-[1.9rem]`}>Skalniak</h2>
           </Link>
           <button className={styles.navButton} onClick={() => toggleMenu()}>MENU</button>
