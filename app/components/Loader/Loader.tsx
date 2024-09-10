@@ -8,7 +8,7 @@ import styles from './loader.module.css';
 
 gsap.registerPlugin(useGSAP);
 
-const Loader = ({ isLoading } : any) => {
+const Loader = ({ onLoadingComplete } : any) => {
   const loader = useRef<HTMLElement | any>();
 
   useGSAP(() => {
@@ -34,7 +34,7 @@ const Loader = ({ isLoading } : any) => {
     .to(loader.current, {
       opacity: 0,
       duration: 0.5,
-      onComplete: () => { isLoading(false) }
+      onComplete: () => { onLoadingComplete(false) }
     })
   }, { scope: loader });
 

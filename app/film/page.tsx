@@ -10,19 +10,25 @@ import { fetchData } from '../utils/cms';
 import { portfolioVideos, contactQuery } from '../utils/cmsQueries';
 
 export default async function FilmPage() {
-  const portfolioVideosCMS = await fetchData(portfolioVideos);
-  const contactCMS = await fetchData(contactQuery);
+  try {
+    const [portfolioVideosCMS, contactCMS] = await Promise.all([
+      fetchData(portfolioVideos),
+      fetchData(contactQuery),
+    ]);
 
-  return (
-    <SmoothScroll>
-      <EntranceOpacity />
-      <main className={`${DMSans.className}`}>
-        <Navigation />
-        <IndustryHero industryHeroCMS={portfolioVideosCMS.data.portfolioVideosCollection} />
-        <VideoContainer portfolioVideosCMS={portfolioVideosCMS}/>
-        <Contact contactCMS={contactCMS}/>
-        <Footer />
-      </main>
-    </SmoothScroll>
-  )
+    return (
+      <SmoothScroll>
+        <EntranceOpacity />
+        <main className={`${DMSans.className}`}>
+          <Navigation />
+          <IndustryHero industryHeroCMS={portfolioVideosCMS.data.portfolioVideosCollection} />
+          <VideoContainer portfolioVideosCMS={portfolioVideosCMS}/>
+          <Contact contactCMS={contactCMS}/>
+          <Footer />
+        </main>
+      </SmoothScroll>
+    );
+  } catch (error : any) {
+    return <p>{error}</p>
+  }
 }

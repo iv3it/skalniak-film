@@ -10,19 +10,25 @@ import { fetchData } from '../utils/cms';
 import { portfolioPhotosQuery, contactQuery } from '../utils/cmsQueries';
 
 export default async function FotoPage() {
-  const portfolioPhotosCMS = await fetchData(portfolioPhotosQuery);
-  const contactCMS = await fetchData(contactQuery);
+  try {
+    const [portfolioPhotosCMS, contactCMS] = await Promise.all([
+      fetchData(portfolioPhotosQuery),
+      fetchData(contactQuery),
+    ]);
 
-  return (
-    <SmoothScroll>
-      <EntranceOpacity />
-      <main className={`${DMSans.className}`}>
-        <Navigation />
-        <IndustryHero industryHeroCMS={portfolioPhotosCMS.data.portfolioPhotosCollection} />
-        <PhotoContainer portfolioPhotosCMS={portfolioPhotosCMS} />
-        <Contact contactCMS={contactCMS} />
-        <Footer />
-      </main>
-    </SmoothScroll>
-  )
+    return (
+      <SmoothScroll>
+        <EntranceOpacity />
+        <main className={`${DMSans.className}`}>
+          <Navigation />
+          <IndustryHero industryHeroCMS={portfolioPhotosCMS.data.portfolioPhotosCollection} />
+          <PhotoContainer portfolioPhotosCMS={portfolioPhotosCMS} />
+          <Contact contactCMS={contactCMS} />
+          <Footer />
+        </main>
+      </SmoothScroll>
+    );
+  } catch (error : any) {
+    return <p>{error}</p>
+  }
 }

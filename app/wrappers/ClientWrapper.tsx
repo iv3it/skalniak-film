@@ -9,18 +9,21 @@ import OfferBoxes from '../components/OfferBoxes/OfferBoxes';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
 
-const ClientWrapper = ({heroCMS, aboutMeCMS, offerBoxesCMS, contactCMS} : any) => {
-  let [isLoading, setIsLoading] : any = useState(true);
+type ClientWrapperProps = {
+  heroCMS: object,
+  aboutMeCMS: object,
+  offerBoxesCMS: object,
+  contactCMS: object,
+}
 
-  let isLoaded = (loaded : boolean) => {
-    setIsLoading(loaded);
-  }
+const ClientWrapper = ({heroCMS, aboutMeCMS, offerBoxesCMS, contactCMS} : ClientWrapperProps) => {
+  let [isLoading, setIsLoading] = useState<boolean>(true);
 
   return (
     <>
       <main className={`${DMSans.className}`}>
         {isLoading &&
-          <Loader isLoading={isLoaded}/>
+          <Loader onLoadingComplete={() => setIsLoading(false)}/>
         }
         {!isLoading && 
           <>
