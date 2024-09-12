@@ -1,8 +1,9 @@
 import Image from "next/image";
 import styles from './contact.module.scss';
+import type { DataCMS, Contact, Link } from '@/types'
 
-const Contact = ({contactCMS} : any) => {
-  let data = contactCMS.data.footerCollection.items[0];
+const Contact = ({ contactCMS } : DataCMS) => {
+  let data : Contact = contactCMS.data.footerCollection.items[0];
 
   return ( 
     <section className="bg-[var(--dark)] mt-32 mb-10" id='kontakt'>
@@ -15,14 +16,14 @@ const Contact = ({contactCMS} : any) => {
           <div className="flex flex-col justify-end mt-12 lg:mt-0">
             <div>
               <div className="text-[var(--white)] flex flex-col text-[1.4rem] uppercase font-medium mb-8">
-                {data.contactLinksCollection.items.map((item : any, index : number) =>
+                {data.contactLinksCollection.items.map((item : Link, index : number) =>
                   <a key={index} href={item.url} target='_blank' rel='noreferrer'>{item.text}</a>
                 )}
               </div>
             </div>
             <div>
               <ul className='flex flex-col mt-2'>
-                {data.socialMediaCollection.items.map((item : any, index : number) =>
+                {data.socialMediaCollection.items.map((item : Link, index : number) =>
                   <li key={index} className={styles.contactLink}> 
                     <a href={item.url} target='_blank' rel='noreferrer' className={styles.contactLinkA}>
                       <Image

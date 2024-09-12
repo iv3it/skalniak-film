@@ -3,7 +3,7 @@ export let heroQuery = `
     heroCollection {
       items {
         title
-        subtitle
+        description
         heroBackground {
           url
         }

@@ -6,11 +6,12 @@ import { useEffect, useRef } from 'react';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import type { DataCMS, About } from '@/types'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export default function About({aboutMeCMS} : any) {
-  let data = aboutMeCMS.data.aboutMeCollection.items[0];
+export default function About({ aboutMeCMS } : DataCMS) {
+  let data : About = aboutMeCMS.data.aboutMeCollection.items[0];
   const about = useRef<HTMLElement | any>();
   const gsapText = useRef<HTMLElement | any>();
   

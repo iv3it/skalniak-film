@@ -6,11 +6,12 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from './hero.module.css';
+import type { DataCMS, Hero } from '@/types'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-const Hero = ({heroCMS} : any) => {  
-  let data = heroCMS.data.heroCollection.items[0];
+const Hero = ({ heroCMS } : DataCMS) => {  
+  let data : Hero = heroCMS.data.heroCollection.items[0];
   const hero = useRef<HTMLElement | any>();
 
   useEffect(() => {    
@@ -55,7 +56,7 @@ const Hero = ({heroCMS} : any) => {
           </h1>
           <h2 className="overflow-hidden text-[var(--white)] text-[0.95rem] mt-8 md:my-0 pr-8 md:max-w-[19.5rem]">
             <span className={`${styles.title} gsap-title`}>
-              {data.subtitle}
+              {data.description}
             </span>
           </h2>
         </div>

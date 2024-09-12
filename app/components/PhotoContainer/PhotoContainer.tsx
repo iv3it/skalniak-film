@@ -7,11 +7,12 @@ import { useEffect, useRef } from 'react';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import type { DataCMS, PortfolioPhotos, PhotoCategory, Photo } from '@/types'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-const PhotoContainer = ({portfolioPhotosCMS} : any) => {
-  let data = portfolioPhotosCMS.data.portfolioPhotosCollection.items[0];
+const PhotoContainer = ({ portfolioPhotosCMS } : DataCMS) => {
+  let data : PortfolioPhotos = portfolioPhotosCMS.data.portfolioPhotosCollection.items[0];
   const photoContainer = useRef<HTMLElement | any>();
 
   useEffect(() => {
@@ -19,7 +20,7 @@ const PhotoContainer = ({portfolioPhotosCMS} : any) => {
   }, [])
 
   useGSAP(() => {
-    gsap.utils.toArray('.gsap-photo').forEach((item : any, i)=>{  
+    gsap.utils.toArray('.gsap-photo').forEach((item : HTMLElement | any, i)=>{  
       gsap.to(item, {
         yPercent: 25,
         scrollTrigger: {
@@ -35,12 +36,12 @@ const PhotoContainer = ({portfolioPhotosCMS} : any) => {
 
   return ( 
     <div ref={photoContainer} className={`mt-20 px-4 container mx-auto`}>
-      {data && data.photoCategoriesCollection.items.map((item : any, index : number) =>
+      {data && data.photoCategoriesCollection.items.map((item : PhotoCategory, index : number) =>
         <div key={index} className='mt-20'>
           <h3 className='text-[var(--white)] text-[2.1rem] md:text-[2.3rem] mb-[2rem] font-medium'>{item.title}</h3>
 
           <div className={`${styles.photosGrid}`}>
-            {item.photosCollection.items.map((photo : any, index : number) =>
+            {item.photosCollection.items.map((photo : Photo, index : number) =>
               <div className={styles.photoBox} key={index}>
                 <Link href={photo.url} target='_blank' rel='noopener'>
                   <div className={`${styles.photoWrapper} gsap-photoWrapper`}>

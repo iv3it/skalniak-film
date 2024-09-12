@@ -5,11 +5,12 @@ import { useEffect, useRef } from 'react';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import type { DataCMS, Offer, PacketType, Packet } from '@/types'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export default function Offer({offerCMS} : any) {
-  let data = offerCMS.data.offerCollection.items[0];
+export default function Offer({ offerCMS } : DataCMS) {
+  let data : Offer = offerCMS.data.offerCollection.items[0];
   const offer = useRef<HTMLElement | any>();
   
   useEffect(() => {
@@ -51,12 +52,12 @@ export default function Offer({offerCMS} : any) {
   return (
     <section ref={offer} style={{ opacity: 0 }} className="bg-[var(--dark)]">
       <div className='container mx-auto px-4'>
-        {data.packetTypeCollection.items.map((item : any, index : number) => 
+        {data.packetTypeCollection.items.map((item : PacketType, index : number) => 
           <div key={index} className='mb-20'>
             <h2 className="text-[var(--white)] text-[2.1rem] md:text-[2.3rem] mb-[2rem] font-medium" id="gsap-FotoContainer">{item.name}</h2>
 
             <div className={`${styles.boxes} grid grid-cols-1 lg:grid-cols-3 gap-4`}>
-              {item.packetCollection.items.map((box : any, index : number) => 
+              {item.packetCollection.items.map((box : Packet, index : number) => 
                 <div className={`${styles.box} gsap-boxFoto`} key={index}>
                   <div className={styles.packet}>
                     <p className={styles.packetText}>{box.text}</p>
@@ -64,7 +65,7 @@ export default function Offer({offerCMS} : any) {
                   </div>
 
                   <ul className={styles.boxList}>
-                    {box.includesList.map((listItem : any, index : number) => 
+                    {box.includesList.map((listItem : string, index : number) => 
                       <li key={index} className={styles.boxListLi}>{listItem}</li>
                     )}
                   </ul>

@@ -3,9 +3,10 @@
 import styles from './offerBoxes.module.scss';
 import Image from "next/image";
 import Link from 'next/link';
+import type { DataCMS, OfferBox } from '@/types'
 
-const OfferBoxes = ({offerBoxesCMS} : any) => {
-  let data = offerBoxesCMS.data.offerBoxesCollection.items;
+const OfferBoxes = ({ offerBoxesCMS } : DataCMS) => {
+  let data : Array<OfferBox> = offerBoxesCMS.data.offerBoxesCollection.items;
 
   return ( 
     <section className='my-32' id="portfolio">
@@ -14,7 +15,7 @@ const OfferBoxes = ({offerBoxesCMS} : any) => {
           <p className='text-3xl font-medium text-[var(--white)] text-center max-w-[60%] mb-20'>Portfolio.</p>
         </div>
         <div className={`${styles.boxGrid}`}>
-          {data.map((item : any, index : number) => 
+          {data.map((item : OfferBox, index : number) => 
             <Link href={item.link.url} className={styles.box} key={index}>
               <div className={styles.tint}></div>
               <Image
