@@ -8,15 +8,9 @@ import About from '../components/About/About';
 import OfferBoxes from '../components/OfferBoxes/OfferBoxes';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
+import { DataCMS } from '@/types';
 
-type ClientWrapperProps = {
-  heroCMS: object,
-  aboutMeCMS: object,
-  offerBoxesCMS: object,
-  contactCMS: object,
-}
-
-const ClientWrapper = ({heroCMS, aboutMeCMS, offerBoxesCMS, contactCMS} : ClientWrapperProps) => {
+const ClientWrapper = ({ heroCMS, aboutMeCMS, offerBoxesCMS, contactCMS } : DataCMS) => {
   let [isLoading, setIsLoading] = useState<boolean>(true);
 
   return (
