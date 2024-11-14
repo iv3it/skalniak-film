@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Kazimierz Skalniak FILM",
-  description: "Kazimierz Skalniak Filmowanie i Fotografia. Sesje weselne, plenerowe, eventowe, teledyski, zdjęcia motoryzacyjne na terenie województwa świętokrzyskiego i całej Polski.",
+  description: "Kazimierz Skalniak Filmowanie i Fotografia. Sesje weselne, plenerowe, eventowe, teledyski, zdjęcia motoryzacyjne na terenie województwa świętokrzyskiego i całej Polski. Fotograf, Potok, Świętokrzyskie.",
 };
 
 export const viewport: Viewport = {
