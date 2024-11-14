@@ -9,9 +9,17 @@ import OfferBoxes from '../components/OfferBoxes/OfferBoxes';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
 import { DataCMS } from '@/types';
+import { useRouter } from 'next/navigation'
 
 const ClientWrapper = ({ heroCMS, aboutMeCMS, offerBoxesCMS, contactCMS } : DataCMS) => {
   let [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const router = useRouter();
+  useEffect(() => {
+    if(!isLoading) {
+      router.push(location.hash, { scroll: true })
+    }
+  }, [isLoading])
 
   return (
     <>
